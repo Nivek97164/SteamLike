@@ -1,17 +1,17 @@
 # SteamLike :
-    - chaque user peut ajouter des jeux à sa bibli
+- chaque user peut ajouter des jeux à sa bibli
 
-    - les jeux sont ajoutés par les admins :
-        -les admins peuvent aussi ajouter des achievment par jeux
+- les jeux sont ajoutés par les admins :
+    -les admins peuvent aussi ajouter des achievment par jeux
 
-    - les users peuvent débloquer les achievments de chacun de leurs jeux
+ - les users peuvent débloquer les achievments de chacun de leurs jeux
 
-    - stats : les jeux qui ont le + d'achievments :
-                -les joueurs qui ont le plus débloqués d'achievment
-                -les jeux les + possédés
-                -les jeux les - possédés
+- stats : les jeux qui ont le + d'achievments :
+    -les joueurs qui ont le plus débloqués d'achievment
+    -les jeux les + possédés
+    -les jeux les - possédés
     
-    Bonus : 
+Bonus : 
 - gestion des super-admins
 - gestion d’image pour les jeux
 
