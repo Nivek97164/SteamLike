@@ -15,8 +15,7 @@ Bonus :
 - gestion des super-admins
 - gestion d’image pour les jeux
 
-
-lien du drawSQL : (https://drawsql.app/teams/steamlink/diagrams/steamlink)
+Lien du drawSQL : (https://drawsql.app/teams/steamlink/diagrams/steamlink)
 ---------------------------------------------------------------------------------------------------------
 
 # CakePHP Application Skeleton
