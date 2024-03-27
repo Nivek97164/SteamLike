@@ -17,6 +17,8 @@ Bonus :
 
 Lien du drawSQL : (https://drawsql.app/teams/steamlink/diagrams/steamlink)
 
+---------------------------------------------------------------------------------------------------------
+
 # CakePHP Application Skeleton
 
 ![Build Status](https://github.com/cakephp/app/actions/workflows/ci.yml/badge.svg?branch=master)
