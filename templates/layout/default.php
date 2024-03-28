@@ -27,7 +27,7 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
     </title>
     <?= $this->Html->meta('icon') ?>
 
-    <?= $this->Html->css(['normalize.min', 'milligram.min', 'fonts', 'cake']) ?>
+    <?= $this->Html->css(['normalize.min', 'milligram.min', 'fonts', 'cake', 'all.min']) ?>
 
     <?= $this->fetch('meta') ?>
     <?= $this->fetch('css') ?>
@@ -36,11 +36,28 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
 <body>
     <nav class="top-nav">
         <div class="top-nav-title">
-            <a href="<?= $this->Url->build('/') ?>"><span>Cake</span>PHP</a>
+            <a href="<?= $this->Url->build('/') ?>"><span>Steam</span>like</a>
         </div>
         <div class="top-nav-links">
-            <a target="_blank" rel="noopener" href="https://book.cakephp.org/4/">Documentation</a>
-            <a target="_blank" rel="noopener" href="https://api.cakephp.org/">API</a>
+            <?= $this->Html->link('<i class="fa-solid fa-house"></i> Toutes les jeux', ['controller' => 'Games', 'action' => 'index'], [
+                'escape' => false,
+                'class' => ($this->templatePath == 'Games' && $this->template == 'index') ? 'active' : ''
+            ]) ?>
+
+
+            <?php if($this->request->getAttribute('identity') == null) : ?>
+
+                <?= $this->Html->link('Créer un compte', ['controller' => 'Users', 'action' => 'signup'], ['escape' => false, 'class' => ($this->templatePath == 'Users' && $this->template == 'signup') ? 'active' : ''] ) ?>
+                <?= $this->Html->link('Se connecter', ['controller' => 'Users', 'action' => 'login'], ['escape' => false, 'class' => ($this->templatePath == 'Users' && $this->template == 'login') ? 'active' : ''] ) ?>
+
+            <?php else : ?>
+
+                <?= $this->Html->link($this->request->getAttribute('identity')->pseudo, ['controller' => 'Users', 'action' => 'pseudo'], ['escape' => false, 'class' => ($this->templatePath == 'Users' && $this->template == 'login') ? 'active' : ''] ) ?>
+                <?= $this->Html->link('Se déconnecter ('.
+                $this->request->getAttribute('identity')->pseudo.')', ['controller' => 'Users', 'action' => 'logout'], ['escape' => false] ) ?>
+
+            <?php endif; ?>
+
         </div>
     </nav>
     <main class="main">

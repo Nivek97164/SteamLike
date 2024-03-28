@@ -14,6 +14,8 @@
 Bonus : 
 - gestion des super-admins
 - gestion d’image pour les jeux
+- si un jeu est suprimer de la librairi du user tout ces badge son surprimer(on ferme la connection)
+- quand on se connecte faire que ca login le user directement
 
 Lien du drawSQL : (https://drawsql.app/teams/steamlink/diagrams/steamlink)
 
