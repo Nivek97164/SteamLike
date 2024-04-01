@@ -1,21 +1,21 @@
 # SteamLike :
-- chaque user peut ajouter des jeux à sa bibli
+- chaque user peut ajouter des jeux à sa bibli (pas fait)
 
-- les jeux sont ajoutés par les admins :
-    - les admins peuvent aussi ajouter des achievment par jeux
+- les jeux sont ajoutés par les admins : (fait)
+    - les admins peuvent aussi ajouter des achievment par jeux (fait)
 
- - les users peuvent débloquer les achievments de chacun de leurs jeux
+ - les users peuvent débloquer les achievments de chacun de leurs jeux (pas fait)
 
-- stats : les jeux qui ont le + d'achievments :
-    - les joueurs qui ont le plus débloqués d'achievment
-    - les jeux les + possédés
-    - les jeux les - possédés
+- stats : les jeux qui ont le + d'achievments : (pas fait)
+    - les joueurs qui ont le plus débloqués d'achievment (pas fait)
+    - les jeux les + possédés (pas fait)
+    - les jeux les - possédés (pas fait)
     
 Bonus : 
-- gestion des super-admins
-- gestion d’image pour les jeux
-- si un jeu est suprimer de la librairi du user tout ces badge son surprimer(on ferme la connection)
-- quand on se connecte faire que ca login le user directement
+- gestion des super-admins (pas fait)
+- gestion d’image pour les jeux (pas fait)
+- si un jeu est suprimer de la librairi du user tout ces badge son surprimer(on ferme la connection) (pas fait)
+- quand on se connecte faire que ca login le user directement (pas fait)
 
 Lien du drawSQL : (https://drawsql.app/teams/steamlink/diagrams/steamlink)
 

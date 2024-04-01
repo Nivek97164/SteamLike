@@ -14,6 +14,8 @@
  * @var \App\View\AppView $this
  */
 
+use PhpParser\Node\Stmt\ElseIf_;
+
 $cakeDescription = 'CakePHP: the rapid development php framework';
 ?>
 <!DOCTYPE html>
@@ -44,15 +46,25 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
                 'class' => ($this->templatePath == 'Games' && $this->template == 'index') ? 'active' : ''
             ]) ?>
 
-
             <?php if($this->request->getAttribute('identity') == null) : ?>
-
                 <?= $this->Html->link('Créer un compte', ['controller' => 'Users', 'action' => 'signup'], ['escape' => false, 'class' => ($this->templatePath == 'Users' && $this->template == 'signup') ? 'active' : ''] ) ?>
                 <?= $this->Html->link('Se connecter', ['controller' => 'Users', 'action' => 'login'], ['escape' => false, 'class' => ($this->templatePath == 'Users' && $this->template == 'login') ? 'active' : ''] ) ?>
 
-            <?php else : ?>
+            <?php elseif($this->request->getAttribute('identity')->level == 'admin') : ?>
+                <?= $this->Html->link('<i class="fa-solid fa-plus"></i>Ajouter un jeux', ['controller' => 'Games', 'action' => 'Add'], ['escape' => false, 'class' => ($this->templatePath == 'Games' && $this->template == 'add') ? 'active' : ''] ) ?>
+                <?= $this->Html->link(
+                'Profil (' . $this->request->getAttribute('identity')->pseudo . ')',
+                ['controller' => 'Users', 'action' => 'pseudo', $this->request->getAttribute('identity')->id],
+                ['escape' => false, 'class' => ($this->templatePath == 'Users' && $this->template == 'login') ? 'active' : '']
+                ) ?>
 
-                <?= $this->Html->link($this->request->getAttribute('identity')->pseudo, ['controller' => 'Users', 'action' => 'pseudo'], ['escape' => false, 'class' => ($this->templatePath == 'Users' && $this->template == 'login') ? 'active' : ''] ) ?>
+
+
+                <?= $this->Html->link('Se déconnecter ('.
+                $this->request->getAttribute('identity')->pseudo.')', ['controller' => 'Users', 'action' => 'logout'], ['escape' => false] ) ?>
+
+            <?php else : ?>
+                <?= $this->Html->link(('Profil (').$this->request->getAttribute('identity')->pseudo.')', ['controller' => 'Users', 'action' => 'pseudo'], ['escape' => false, 'class' => ($this->templatePath == 'Users' && $this->template == 'login') ? 'active' : ''] ) ?>
                 <?= $this->Html->link('Se déconnecter ('.
                 $this->request->getAttribute('identity')->pseudo.')', ['controller' => 'Users', 'action' => 'logout'], ['escape' => false] ) ?>
 

@@ -23,6 +23,26 @@
 
 use Cake\Routing\Route\DashedRoute;
 use Cake\Routing\RouteBuilder;
+use Cake\Routing\Router;
+ 
+Router::defaultRouteClass(DashedRoute::class);
+ 
+Router::scope('/', function (RouteBuilder $routes) {
+    // Connexion de la route pour afficher le profil de l'utilisateur
+    $routes->connect(
+        '/users/pseudo/:id',
+        ['controller' => 'Users', 'action' => 'pseudo'],
+        ['pass' => ['id'], '_name' => 'userProfile']
+    );
+    
+
+
+    // Autres routes
+
+    $routes->fallbacks();
+});
+
+ 
 
 /*
  * This file is loaded in the context of the `Application` class.
